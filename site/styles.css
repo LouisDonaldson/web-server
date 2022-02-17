@@ -1,0 +1,48 @@
+body
+{
+    font-family: Montserrat;
+}
+
+#menu_bar_div
+{
+    display: flex;
+    width: auto;
+    height: 50px;
+}
+
+#content_banner_strip
+{
+    background-color: #aabece;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+#content_banner_title_div
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_banner_title
+{
+    margin: 0%;
+    font-weight: 600;
+    /*font-size: 35pt;*/
+    font-stretch: expanded;
+}
+
+#content_banner_subtitle_div
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_banner_subtitle
+{
+    margin: 0%;
+    /*font-size: 20pt;*/
+}
