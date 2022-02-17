@@ -12,7 +12,7 @@ body
 
 #content_banner_strip
 {
-    background-color: #aabece;
+    background-color: #b0cfe9;
     padding: 20px 0px;
     text-align: center;
 }
@@ -45,4 +45,9 @@ body
 {
     margin: 0%;
     /*font-size: 20pt;*/
+}
+
+#advice_main_div
+{
+    height: 100px;
 }
