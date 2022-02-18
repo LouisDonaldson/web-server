@@ -106,3 +106,10 @@ body
     text-align: center;
     font-size: 30pt;
 }
+
+#advice_button_cover
+{
+    background-color: #0a9396;
+    z-index: 2;
+    opacity: 0%;
+}
