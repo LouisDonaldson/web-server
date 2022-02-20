@@ -47,69 +47,9 @@ body
     /*font-size: 20pt;*/
 }
 
-#advice_main_textbox_div
-{
-    margin-bottom: 30px;
-}
-
-#advice_main_div
-{
-    
-}
-
-#advice_textbox_div
-{
-    
-
-}
-
-#advice_textbox
-{
-    background-color: #0b1f27;
-    border-radius: 10px;
-    min-height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#advice_text
-{
-    color: #ffffff;
-    margin: 20px 10px;
-    font-size: 40pt;
-}
-
-#click_for_advice_button_div
-{
-    width: auto;
-}
-
-#advice_button
-{
-    background-color: #ee9b00;
-    border-radius: 10px;
-    padding: 15px 20px;
-}
-
-#advice_button:hover
-{
-    background-color: #da8d00;
-    cursor: pointer;
-}
-
-#advice_button_text
-{
-    margin: 0%;
-    text-align: center;
-    font-size: 30pt;
-}
-
-#advice_button_cover
+#main_div
 {
     background-color: #0a9396;
-    z-index: 2;
-    opacity: 0%;
+    border-radius: 10px;
+    
 }
