@@ -51,5 +51,42 @@ body
 {
     background-color: #0a9396;
     border-radius: 10px;
+    padding: 10px;
+
+}
+
+#title_div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input_submit_div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
     
+}
+
+#input
+{
+    width: 60%;
+}
+
+#submit_btn_div
+{
+    padding: 5px;
+    background-color: aliceblue;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+#submit_btn_div:hover
+{
+    background-color: #e2e9f0; 
+    cursor: pointer;  
 }
