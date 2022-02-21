@@ -90,3 +90,12 @@ body
     background-color: #e2e9f0; 
     cursor: pointer;  
 }
+
+#result_text_div
+{
+    background-color:#e2e9f0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
