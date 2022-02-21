@@ -9,27 +9,54 @@ submit_button.addEventListener('click', function(){
     GetResponse(input_text)
   }
 })
-const link = `https://api.urbandictionary.com/v0/define?term=${input_text}`;
 
+var responseObj = null;
+var added = false;
 
 // api handler
 function GetResponse(input_text){
-  const data = null;
-
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-  
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-      //definition_text.innerHtml = this.responseText;
-      console.log(this.responseText);
-    }
-  });
+  const Http = new XMLHttpRequest();
   const link = `https://api.urbandictionary.com/v0/define?term=${input_text}`;
-  xhr.open("GET", link);
-  //xhr.setRequestHeader("x-rapidapi-host", "mashape-community-urban-dictionary.p.rapidapi.com");
-  //xhr.setRequestHeader("x-rapidapi-key", "53ce3638a9mshb0c4fe33d0cfca9p1100ffjsnf7abe9c081b3");
-  
-  xhr.send(data);
+  Http.open("GET", link);
+  Http.send();
 
+    Http.onreadystatechange = (e) => {
+      if(Http.status == 200){
+        var response = Http.responseText;
+        console.log(response);
+        try{
+          responseObj = JSON.parse(response);
+  
+        }
+        catch{
+  
+        }
+        if(!added){
+          AddDefinitionToUI(responseObj);
+        }
+      }
+    }
+}
+
+function AddDefinitionToUI(responseObj){
+  for(var i = 0; i < responseObj.list.length; i++){
+    // parent = main_div
+    // <div id="result_text_div">
+    //      <h3 id="results_text" style="text-align: center; margin: 10px;">No results</h3>
+    // </div>
+    var individualDefinitionResponse = responseObj.list[i];
+
+    var newResultsTextDiv =  document.createElement('div');
+    newResultsTextDiv.id = "result_text_div";
+    document.querySelector('#main_div').appendChild(newResultsTextDiv);
+
+    var newTextDefinition = document.createElement('h3');
+    newTextDefinition.id = "results_text";
+    newTextDefinition.style = 'text-align: center; margin: 10px;';
+    newResultsTextDiv.appendChild(newTextDefinition)
+
+    const string = individualDefinitionResponse.definition + '\n\n' + individualDefinitionResponse.example;
+    newTextDefinition.innerHTML = string;
+  };
+  added = true;
 }
