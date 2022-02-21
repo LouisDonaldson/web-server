@@ -9,6 +9,7 @@ submit_button.addEventListener('click', function(){
     GetResponse(input_text)
   }
 })
+const link = `https://api.urbandictionary.com/v0/define?term=${input_text}`;
 
 
 // api handler
