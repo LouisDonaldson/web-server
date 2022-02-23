@@ -16,28 +16,33 @@ submit_button.addEventListener('click', function(){
 var responseObj = null;
 
 // api handler
-function GetResponse(input_text){
+function GetResponse(input_text) {
   const Http = new XMLHttpRequest();
   const link = `https://api.urbandictionary.com/v0/define?term=${input_text}`;
   Http.open("GET", link);
   Http.send();
-
+  try {
     Http.onreadystatechange = (e) => {
-      if(Http.status == 200){
+      if (Http.status == 200) {
         var response = Http.responseText;
         console.log(response);
-        try{
+        try {
           responseObj = JSON.parse(response);
-  
+
         }
-        catch{
-  
+        catch {
+
         }
-        if(!added){
+        if (!added) {
+          document.querySelector('#main_div').innerHTML = "<div id=\"title_div\"><h2 style=\"text-align: center; margin: 0px 0px 20px 0px;\">Enter a word or phrase to learn it's Urban Dictionary Definition</h2></div><div id=\"input_submit_div\"><input id=\"input\" type=\"text\" placeholder=\"Enter a word or phrase\"><div id=\"submit_btn_div\"><h6 style=\"margin: 0px;\">submit</h6></div></div>";
           AddDefinitionToUI(responseObj);
         }
       }
     }
+  }
+  catch {
+
+  }
 }
 
 function AddDefinitionToUI(responseObj){
@@ -46,7 +51,6 @@ function AddDefinitionToUI(responseObj){
     // <div id="result_text_div">
     //      <h3 id="results_text" style="text-align: center; margin: 10px;">No results</h3>
     // </div>
-    document.querySelector('#main_div').innerHTML = "<div id=\"title_div\"><h2 style=\"text-align: center; margin: 0px 0px 20px 0px;\">Enter a word or phrase to learn it's Urban Dictionary Definition</h2></div><div id=\"input_submit_div\"><input id=\"input\" type=\"text\" placeholder=\"Enter a word or phrase\"><div id=\"submit_btn_div\"><h6 style=\"margin: 0px;\">submit</h6></div></div>";
 
     var individualDefinitionResponse = responseObj.list[i];
 
